@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>TRAVELER - Free Travel Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative nav-bar p-0">
+        <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
+            <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
+                <a href="" class="navbar-brand">
+                    <h1 class="m-0 text-primary"><span class="text-dark">TRANSPORTES</span>TLAXIACO</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto py-0">
+                        <a href="index.html" class="nav-item nav-link active">Inicio</a>
+                        
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cliente</a>
+                        <div class="dropdown-menu border-0 rounded-0 m-0">
+                            <a href="" class="dropdown-item">Perfil</a>
+                            <a href="clienteeditarperfil.html" class="dropdown-item">Editar Perfil</a>
+                            <a href="" class="dropdown-item">Historial</a>
+                            <a href="iniciarsesion.html" class="dropdown-item">Cerrar Sesión</a>
+                            <a href="paquete.html" class="dropdown-item">Enviar paquete</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+   <!-- Contenedor principal -->
+   <!-- Formulario de Envío -->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <form action="enviarpaquete.php" method="post" class="contenedor-principal">
+                <div class="container-fluid bg-light p-4">
+                    <h2 class="text-center mb-4">Formulario de Envío</h2>
+                    <div class="form-group">
+                        <label for="tamano">Tamaño:</label>
+                        <input type="text" class="form-control" id="tamano" name="tamano">
+                    </div>
+                    <div class="form-group">
+                        <label for="peso">Peso:</label>
+                        <input type="text" class="form-control" id="peso" name="peso">
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">Remitente:</label>
+                        <input type="text" class="form-control" id="remitente" name="remitente">
+                    </div>
+                    <div class="form-group">
+                        <label for="destinatario">Destinatario:</label>
+                        <input type="text" class="form-control" id="destinatario" name="destinatario">
+                    </div>
+                    <div class="form-group">
+                        <label for="destino">Destino:</label>
+                        <input type="text" class="form-control" id="destino" name="destino">
+                    </div>
+                    <div class="form-group">
+                        <label for="hora_salida">Hora de Salida:</label>
+                        <input type="time" class="form-control" id="hora_salida" name="hora_salida">
+                    </div>
+                    <div class="form-group">
+                        <label for="hora_llegada">Hora de Llegada:</label>
+                        <input type="time" class="form-control" id="hora_llegada" name="hora_llegada">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> <br>
+<!-- Fin del Formulario de Envío -->
+
+<!-- Fin del Contenedor principal -->
+
+
+
+
+<!-- Carousel End -->
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-white py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-3 col-md-6 mb-5">
+            <a href="" class="navbar-brand">
+                <h1 class="text-primary"><span class="text-white">TRAVEL</span>ER</h1>
+            </a>
+            <p class="text-muted">Sed ipsum clita tempor ipsum ipsum amet sit ipsum lorem amet labore rebum lorem ipsum dolor. No sed vero lorem dolor dolor</p>
+        </div>
+    </div>
+</div>
+
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

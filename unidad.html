@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>TRAVELER - Free Travel Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Topbar Start -->
+   
+    <!-- Topbar End -->
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative nav-bar p-0">
+        <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
+            <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
+                <a href="" class="navbar-brand">
+                    <h1 class="m-0 text-primary"><span class="text-dark">TRANSPORTES</span>TLAXIACO</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto py-0">
+                        <a href="index.html" class="nav-item nav-link active">Inicio</a>
+                        
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Admin</a>
+                        <div class="dropdown-menu border-0 rounded-0 m-0">
+                            
+                            <a href="personal.html" class="dropdown-item">Registro Personal</a>
+                            <a href="" class="dropdown-item">Registro Unidad</a>
+                            <a href="" class="dropdown-item">Historial</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    
+
+
+    <!-- Header Start -->
+    <div class="container-fluid page-header">
+        <div class="container">
+            <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+                <h3 class="display-4 text-white text-uppercase">REGISTRO DE LA UNIDAD</h3>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+    <!-- Booking Start -->
+    <!-- Booking Start -->
+     <!-- Booking Start -->
+     <div class="container-fluid booking mt-5 pb-5">
+        <div class="container pb-5">
+            <div class="bg-light shadow">
+                <div class="row align-items-center" style="min-height: 60px;">
+                    <div class="col-md-12">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                    <form action="unidad.php" method="post"></form>
+                                   <br><br>
+                                    <div class="form-group">
+                                        <label for="fecha_ingreso">Fecha de Ingreso:</label>
+                                        <input type="date" id="fecha_ingreso" name="fecha_ingreso" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tipo_licencia">Tipo de Licencia:</label>
+                                        <select id="tipo_licencia" name="tipo_licencia" class="form-control" required>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="marca">Marca:</label>
+                                        <input type="text" id="marca" name="marca" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="modelo">Modelo:</label>
+                                        <input type="text" id="modelo" name="modelo" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="matricula">Matrícula:</label>
+                                        <input type="text" id="matricula" name="matricula" class="form-control" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                </form>
+                                <br><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Booking End -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

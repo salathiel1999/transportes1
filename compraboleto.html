@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>TRANSPORTES</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative nav-bar p-0">
+        <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
+            <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
+                <a href="" class="navbar-brand">
+                    <h1 class="m-0 text-primary"><span class="text-dark">TRANSPORTES</span>TLAXIACO</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto py-0">
+                        <a href="indexcliente.html" class="nav-item nav-link active">Inicio</a>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cliente</a>
+                        <div class="dropdown-menu border-0 rounded-0 m-0">
+                           <a href="" class="dropdown-item">Enviar Paquete</a>
+                            <a href="compraboleto.html" class="dropdown-item">Comprar Boleto</a>
+                            <a href="iniciarsesion.html" class="dropdown-item">Cerrar Sesión</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <br><br><br><br><br><br><br><br><br><br>
+    <style>
+        /* Estilos CSS */
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            /* Color de fondo gris claro para el cuerpo */
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .container-form {
+            background-color: #ffffff;
+            /* Color de fondo blanco para el formulario */
+            max-width: 600px;
+            /* Ajusta el ancho del formulario según sea necesario */
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            /* Añade un borde opcional */
+            border-radius: 5px;
+            /* Añade bordes redondeados */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* Añade sombra */
+            position: relative;
+            /* Posición relativa para el contenedor */
+        }
+
+        .container-form:before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background-color: #f2f2f2;
+            /* Color de fondo gris claro para el contenedor detrás del formulario */
+            z-index: -1;
+            /* Coloca el contenedor detrás del formulario */
+            border-radius: 5px;
+            /* Ajusta el borde redondeado para que coincida con el formulario */
+        }
+
+        .container-form img {
+            max-width: 40%;
+            /* Ajusta el tamaño de la imagen al ancho del formulario */
+            margin-bottom: 10px;
+            /* Espacio entre la imagen y el formulario */
+            display: block;
+            /* Para centrar la imagen horizontalmente */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* Añade más estilos según sea necesario */
+    </style>
+    <br>
+    <div class="container">
+        <div class="container-form">
+            <h2>Reserva tu Viaje</h2>
+            <form action="miboleto.php" method="post" onsubmit="return validarOrigenDestino()">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" class="form-control" id="apellidos" name="apellidos" required>
+                </div>
+                <div class="form-group">
+                    <label for="origen">Origen:</label>
+                    <select class="form-control" id="origen" name="origen" required>
+                        <option value="">Selecciona tu origen</option>
+                        <option value="Oaxaca">Oaxaca</option>
+                        <option value="Nochixtlán">Nochixtlán</option>
+                        <option value="Teposcolula">Teposcolula</option>
+                        <option value="Yolomecatl">Yolomecatl</option>
+                        <option value="Tlaxiaco">Tlaxiaco</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="destino">Destino:</label>
+                    <select class="form-control" id="destino" name="destino" onchange="actualizarPrecio()" required>
+                        <option value="">Selecciona tu destino</option>
+                        <option value="Oaxaca">Oaxaca</option>
+                        <option value="Nochixtlán">Nochixtlán</option>
+                        <option value="Teposcolula">Teposcolula</option>
+                        <option value="Yolomecatl">Yolomecatl</option>
+                        <option value="Tlaxiaco">Tlaxiaco</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="asiento">Asiento:</label>
+                    <select class="form-select form-select-lg mb-3" id="asiento" name="asiento"
+                        aria-label=".form-select-lg example">
+                        <option selected>Seleccione un asiento</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                    </select>
+                    <img src="img/suburban5.jpg" alt="Descripción de la imagen">
+                    <!-- Script para mostrar mensaje de alerta -->
+                </div>
+                <div class="form-group">
+                    <label for="fecha_hora">Fecha y Hora:</label>
+                    <input type="datetime-local" class="form-control" id="fecha_hora" name="fecha_hora" required>
+                </div>
+                <div class="form-group">
+                    <label for="precio">Precio:</label>
+                    <input type="number" class="form-control" id="precio" name="precio" required readonly>
+                </div>
+                <div class="form-group">
+                    <label for="tipo_pago">Tipo de Pago:</label>
+                    <select class="form-control" id="pago" name="pago" required>
+                        <option value="Efectivo">Efectivo</option>
+                        <option value="Tarjeta de Crédito">Tarjeta de Crédito</option> <!-- Opción añadida -->
+                    
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="hora_salida">Hora de Salida:</label>
+                    <!-- Cambié los horarios de salida -->
+                    <select class="form-control" id="hora_salida" name="hora_salida" required>
+                        <option value="07:00">7:00 AM</option>
+                        <option value="08:00">8:00 AM</option>
+                        <option value="09:00">9:00 AM</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="12:00">12:00 PM</option>
+                        <option value="13:00">1:00 PM</option>
+                        <option value="14:00">2:00 PM</option>
+                        <option value="15:00">3:00 PM</option>
+                        <option value="16:00">4:00 PM</option>
+                        <option value="17:00">5:00 PM</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Reservar</button>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="tarjetaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ingresar Detalles de la Tarjeta</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Aquí puedes colocar los campos para ingresar el número de tarjeta, fecha y CVV -->
+                    <div class="form-group">
+                        <label for="numTarjeta">Número de Tarjeta:</label>
+                        <input type="text" class="form-control" id="numTarjeta" name="numTarjeta" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaTarjeta">Fecha de Vencimiento:</label>
+                        <input type="text" class="form-control" id="fechaTarjeta" name="fechaTarjeta" placeholder="MM/YY" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvvTarjeta">CVV:</label>
+                        <input type="text" class="form-control" id="cvvTarjeta" name="cvvTarjeta" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <!-- Puedes agregar un botón de "Guardar" aquí si necesitas enviar los datos del modal al servidor -->
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+
+    <br><br> <br><br><br><br><br><br><br><br>
+</html>
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-white py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-7 col-md-6 mb-5">
+            <a href="" class="navbar-brand">
+                <h1 class="text-primary"><span class="text-white">TRANSPORTES</span>TLAXIACO</h1>
+            </a>
+            <p class="text-muted">"¡Explora el camino a Oaxaca y más allá, con comodidad y seguridad en cada
+                parada!"</p>
+        </div>
+    </div>
+</div>
+
+<!-- Footer End -->
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/tempusdominus/js/moment.min.js"></script>
+<script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+<script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+<!-- Contact Javascript File -->
+<script src="mail/jqBootstrapValidation.min.js"></script>
+<script src="mail/contact.js"></script>
+
+<!-- Template Javascript -->
+<script>
+    function actualizarPrecio() {
+        var origen = document.getElementById("origen").value;
+        var destino = document.getElementById("destino").value;
+        var precio = document.getElementById("precio");
+
+        if (origen === "Nochixtlán" && destino === "Tlaxiaco") {
+            precio.value = "100";
+             // Nochixtlán - Tlaxiaco
+        } else if (origen === "Nochixtlán" && destino === "Teposcolula") {
+            precio.value = "50"; // Nochixtlán - Teposcolula
+} 
+        
+else if (origen === "Oaxaca" && destino === "Tlaxiaco") {
+            precio.value = "140"; // Nochixtlán - Yolomecalt
+        } 
+        else if (origen === "Oaxaca" && destino === "Nochixtlán") {
+            precio.value = "100"; // Nochixtlán - Yolomecalt
+        } 
+        else if (origen === "Oaxaca" && destino === "Teposcolula") {
+            precio.value = "115"; // Nochixtlán - Yolomecalt
+        } 
+        else if (origen === "Oaxaca" && destino === "Yolomecatl") {
+            precio.value = "130"; // Nochixtlán - Yolomecalt
+        } 
+
+        
+        else if (origen === "Nochixtlán" && destino === "Yolomecatl") {
+            precio.value = "70"; // Nochixtlán - Yolomecalt
+        } else if (origen === "Nochixtlán" && destino === "Oaxaca") {
+            precio.value = "100"; // Nochixtlán - Oaxaca
+        } else if (origen === "Teposcolula" && destino === "Yolomecatl") {
+            precio.value = "20"; // Teposcolula - Yolomecalt
+        } else if (origen === "Teposcolula" && destino === "Tlaxiaco") {
+            precio.value = "50"; // Teposcolula - Tlaxiaco
+        }
+        else if (origen === "Teposcolula" && destino === "Oaxaca") {
+            precio.value = "115"; // Teposcolula - Tlaxiaco
+        } 
+        else if (origen === "Teposcolula" && destino === "Nochixtlán") {
+            precio.value = "50"; // Teposcolula - Nochixtlán
+        } else if (origen === "Yolomecatl" && destino === "Oaxaca") {
+            precio.value = "130"; // Yolomecalt - Oaxaca
+        } else if (origen === "Yolomecatl" && destino === "Nochixtlán") {
+            precio.value = "70"; // Yolomecalt - Nochixtlán
+        } else if (origen === "Yolomecatl" && destino === "Tlaxiaco") {
+            precio.value = "30"; // Yolomecalt - Tlaxiaco
+        } else if (origen === "Yolomecatl" && destino === "Teposcolula") {
+            precio.value = "20"; // Yolomecalt - Teposcolula
+        } else if (origen === "Tlaxiaco" && destino === "Oaxaca") {
+            precio.value = "140"; // Tlaxiaco - Oaxaca
+        } else if (origen === "Tlaxiaco" && destino === "Yolomecatl") {
+            precio.value = "30"; // Tlaxiaco - Yolomecalt
+        } else if (origen === "Tlaxiaco" && destino === "Teposcolula") {
+            precio.value = "50"; // Tlaxiaco - Teposcolula
+        } else if (origen === "Tlaxiaco" && destino === "Nochixtlán") {
+            precio.value = "100"; // Tlaxiaco - Nochixtlán
+        } else if (origen === "Tlaxiaco" && destino === "Oaxaca") {
+            precio.value = "140"; // Tlaxiaco - Oaxaca
+        } else {
+            // Si no se cumple ninguna de las condiciones anteriores, establece un valor predeterminado
+            precio.value = "";
+        }
+    }
+
+    function validarOrigenDestino() {
+        var origen = document.getElementById("origen").value;
+        var destino = document.getElementById("destino").value;
+
+        if (origen === destino) {
+            alert("El origen y el destino no pueden ser iguales. Por favor, selecciona diferentes opciones.");
+            return false; // Evita que el formulario se envíe si el origen y el destino son iguales
+        }
+        return true; // Permite enviar el formulario si el origen y el destino son diferentes
+    }
+</script>
+<script src="js/main.js"></script>
+</body>
+
+</html>
